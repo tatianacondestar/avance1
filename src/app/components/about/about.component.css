@@ -1,0 +1,92 @@
+.about-section {
+  background: #f9fbfd;
+  padding: 60px 20px;
+  text-align: center; /* 👈 centramos por defecto */
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #0d2c54;
+  text-align: center; /* 👈 centramos */
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 750px;
+  margin: 0 auto; /* 👈 centramos bloque */
+  text-align: center;
+}
+
+.section-subtitle .highlight {
+  color: #ff9800;
+  font-weight: bold;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.about-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.icon-wrapper {
+  background: #eef3f9;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  transition: background 0.3s;
+}
+
+.about-card:hover .icon-wrapper {
+  background: #ffd54f33;
+}
+
+.about-card h4 {
+  font-weight: bold;
+  color: #0d2c54;
+}
+
+.about-card p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #0d2c54;
+  text-align: center;
+  position: relative;
+  display: inline-block; /* 👈 para que la línea quede ajustada */
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 80px;              /* ancho de la línea */
+  height: 4px;              /* grosor */
+  background: linear-gradient(90deg, #ff9800, #0d2c54); /* degradado elegante */
+  margin: 8px auto 0;       /* centrado */
+  border-radius: 2px;
+}
