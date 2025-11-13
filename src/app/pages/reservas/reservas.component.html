@@ -1,0 +1,82 @@
+<div class="contenedor">
+  <h2 class="titulo">
+    📝 <b>Formulario de Reserva</b>
+  </h2>
+
+  <form [formGroup]="reservaForm" (ngSubmit)="onSubmit()" class="formulario">
+    <label>Nombre:</label>
+    <input
+      type="text"
+      formControlName="nombre"
+      placeholder="Ingrese su nombre completo"
+    />
+    <div class="error" *ngIf="f['nombre'].touched && f['nombre'].invalid">
+      El nombre es obligatorio y debe tener al menos 3 caracteres.
+    </div>
+
+    <label>Servicio:</label>
+    <select formControlName="servicio">
+      <option value="">Seleccione un servicio</option>
+      <option>Canotaje</option>
+      <option>Paseo a caballo</option>
+      <option>Paseo por viñedos</option>
+      <option>Ruteos</option>
+      <option>Canopy</option>
+    </select>
+    <div class="error" *ngIf="f['servicio'].touched && f['servicio'].invalid">
+      Debe seleccionar un servicio.
+    </div>
+
+    <label>Fecha:</label>
+    <input type="date" formControlName="fecha" />
+    <div class="error" *ngIf="f['fecha'].errors?.['fechaInvalida']">
+      La fecha no puede ser anterior a hoy
+    </div>
+
+    <label>Hora:</label>
+    <input type="time" formControlName="hora" />
+
+    <label>Teléfono:</label>
+    <input type="text" formControlName="telefono" maxlength="9" />
+
+    <label>Cantidad de personas:</label>
+    <input type="number" formControlName="personas" min="1" />
+
+    <button type="submit" class="btn-guardar">
+      💾 {{ editIndex !== null ? 'Actualizar' : 'Guardar' }} Reserva
+    </button>
+  </form>
+
+  <hr />
+
+  <h3 *ngIf="reservas.length > 0" class="titulo-lista">📋 Lista de Reservas</h3>
+
+  <table *ngIf="reservas.length > 0" class="tabla">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Servicio</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+        <th>Teléfono</th>
+        <th>Personas</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of reservas; let i = index">
+        <td>{{ r.nombre }}</td>
+        <td>{{ r.servicio }}</td>
+        <td>{{ r.fecha }}</td>
+        <td>{{ r.hora }}</td>
+        <td>{{ r.telefono }}</td>
+        <td>{{ r.personas }}</td>
+        <td>
+          <button class="btn-ver" (click)="verReserva(i)">👁️ Ver</button>
+          <button class="btn-editar" (click)="editarReserva(i)">✏️ Editar</button>
+          <button class="btn-eliminar" (click)="eliminarReserva(i)">🗑️ Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

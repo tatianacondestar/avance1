@@ -1,11 +1,14 @@
 <header class="navbar">
-  <div class="logo"> Expediciones Lunahuaná</div>
+  <div class="logo">Expediciones Lunahuaná</div>
   <nav>
     <ul>
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#contacto">Contacto</a></li>
+      <li><a routerLink="/">Inicio</a></li>
+      <li><a routerLink="/" fragment="sobre-nosotros">Sobre Nosotros</a></li>
+      <li><a routerLink="/" fragment="servicios">Servicios</a></li>
+    <li><a (click)="abrirReservas()">Reservas</a></li>
+
+
+      <li><a routerLink="/" fragment="contacto">Contacto</a></li>
     </ul>
   </nav>
 </header>

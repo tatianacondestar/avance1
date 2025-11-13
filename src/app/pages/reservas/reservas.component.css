@@ -1,0 +1,82 @@
+.contenedor {
+  max-width: 800px;
+  margin: 30px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+  text-align: center;
+  color: #0a3a7a;
+  margin-bottom: 20px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input, select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+}
+
+.btn-guardar {
+  background-color: #0a3a7a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  width: 180px;
+  font-size: 14px;
+  margin-top: 10px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.btn-guardar:hover {
+  background-color: #0d4ca3;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.tabla th, .tabla td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.tabla th {
+  background-color: #0a3a7a;
+  color: white;
+}
+
+.btn-ver, .btn-editar, .btn-eliminar {
+  margin: 2px;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.btn-ver { background-color: #17a2b8; color: white; }
+.btn-editar { background-color: #ffc107; color: black; }
+.btn-eliminar { background-color: #dc3545; color: white; }
+
+.btn-ver:hover { background-color: #138496; }
+.btn-editar:hover { background-color: #e0a800; }
+.btn-eliminar:hover { background-color: #c82333; }

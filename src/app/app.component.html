@@ -2,6 +2,14 @@
 <app-hero></app-hero>
 <app-about></app-about>
 <app-services></app-services>
+
+<!-- 👇 Mantén tu condición, no la borres -->
+<app-reservas *ngIf="isReservasPage()"></app-reservas>
+
 <app-team></app-team>
-<app-contact></app-contact> <!-- 👈 aquí -->
+<app-contact></app-contact>
+
+<!-- 👇 AÑADE ESTA LÍNEA -->
+<router-outlet></router-outlet>
+
 <app-footer></app-footer>
